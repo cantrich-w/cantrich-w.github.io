@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨柳青庄园鬼屋 - 天津惊悚探险体验与游玩攻略指南</title>
+    <meta name="description" content="杨柳青庄园鬼屋是天津地区极具特色的沉浸式恐怖主题乐园。本站提供鬼屋园区介绍、惊悚项目攻略、票价信息、开放时间及最佳游玩路线规划，助您体验最刺激的夜游之旅。">
+    <meta name="keywords" content="杨柳青庄园鬼屋, 天津鬼屋, 沉浸式恐怖体验, 惊悚乐园, 夜游攻略, 杨柳青庄园">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #2c0e0e;
+            --accent-color: #ff4500;
+            --text-color: #333;
+            --light-text: #f4f4f4;
+            --bg-color: #1a1a1a;
+            --card-bg: #252525;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--light-text);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--light-text);
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid var(--primary-color);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/ghosthouse/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--light-text);
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-text);
+            color: var(--secondary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Content Area: Intro & Info */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .info-article {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+        }
+
+        .info-article h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-article p {
+            margin-bottom: 1.5rem;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        .info-list {
+            margin-top: 2rem;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #ddd;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-box {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .sidebar-box h4 {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info strong {
+            color: var(--light-text);
+            min-width: 80px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #111;
+            padding: 4rem 1rem;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--light-text);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #2a2a2a;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #aaa;
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .icon-plus {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 3rem 1rem;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: #888;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">杨柳青庄园<span>鬼屋</span></div>
+        <nav>
+            <ul>
+                <li><a href="#intro">园区简介</a></li>
+                <li><a href="#features">特色项目</a></li>
+                <li><a href="#guide">游玩指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#booking" class="cta-button">立即预约</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>直面恐惧，挑战极限</h1>
+            <p>杨柳青庄园鬼屋为您打造天津最真实的沉浸式恐怖体验，突破感官极限，探索未知领域。</p>
+            <div class="hero-buttons">
+                <a href="#guide" class="btn-primary">查看游玩攻略</a>
+                <a href="#booking" class="btn-secondary">查看票价与时间</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="container">
+            <div class="section-header">
+                <h2>关于杨柳青庄园鬼屋</h2>
+                <p>坐落于风景秀丽的杨柳青庄园内，结合了中式园林建筑与现代惊悚美学</p>
+            </div>
+            <div class="content-layout">
+                <article class="info-article">
+                    <h3>沉浸式惊悚体验</h3>
+                    <p>杨柳青庄园鬼屋不仅仅是一个简单的室内迷宫，它是一个集剧本杀、实景互动、NPC追逐于一体的综合型恐怖体验馆。园区利用庄园原有的古建筑结构，经过精心改造，营造出一种阴森、压抑却又充满诱惑的探险氛围。</p>
+                    <p>这里的每一个房间都经过精心设计，从废弃的医务室到幽深的地下墓穴，每一个角落都可能藏着未知的恐惧。我们拒绝千篇一律的道具和简单的惊吓，致力于通过灯光、音效、气味以及专业演员的表演，带给游客最真实的生理和心理双重刺激。</p>
+                    <p>无论您是独自探险还是与朋友结伴，这里都有适合您的挑战难度。从入门级的“迷雾小径”到地狱级的“尸骨密室”，不同主题区域满足不同恐怖爱好者对刺激程度的追求。</p>
+                    
+                    <h3>游玩小贴士</h3>
+                    <ul class="info-list">
+                        <li><strong>衣物建议：</strong> 建议穿着舒适的运动鞋，园区内部多为木质地板和楼梯，高跟鞋可能带来不便。</li>
+                        <li><strong>胆量分级：</strong> 初次体验者建议从“惊悚入门”区开始，切勿盲目挑战高难度区域。</li>
+                        <li><strong>禁带物品：</strong> 为保证园区秩序及他人体验，禁止携带大型背包、专业摄影设备（部分区域除外）及易燃易爆物品。</li>
+                    </ul>
+                </article>
+
+                <aside>
+                    <div class="sidebar-box">
+                        <h4>开放时间</h4>
+                        <p style="color:#aaa; margin-bottom:0.5rem;">夏季（4月-10月）</p>
+                        <p style="color:white; font-weight:bold;">周五、周六、节假日 18:00 - 22:00</p>
+                        <p style="color:#aaa; margin-bottom:0.5rem; margin-top:1rem;">淡季（11月-3月）</p>
+                        <p style="color:white; font-weight:bold;">周末及节假日 18:00 - 21:00</p>
+                    </div>
+
+                    <div class="sidebar-box" id="booking">
+                        <h4>票价信息</h4>
+                        <span class="price-tag">¥128<span style="font-size:1rem; color:#888; font-weight:normal;">起</span></span>
+                        <p class="price-note">包含单人通票（不含其他项目）</p>
+                        <hr style="border:0; border-top:1px solid #444; margin:1rem 0;">
+                        <p style="font-size:0.9rem; color:#aaa;">* 团体票（10人以上）需提前电话咨询。</p>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h4>联系方式</h4>
+                        <div class="contact-info">
+                            <p><strong>地址：</strong> 天津市西青区杨柳青庄园内</p>
+                            <p><strong>电话：</strong> 022-xxxx-xxxx</p>
+                            <p><strong>咨询：</strong> 微信：yyql_mh</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="container">
+            <div class="section-header">
+                <h2>特色主题区域</h2>
+                <p>四大主题区域，层层递进的恐惧体验</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏚️</div>
+                    <h3>废弃医院</h3>
+                    <p>充满消毒水气味的走廊，摇曳的手术灯光，这里曾是治疗精神病的场所，现在却关押着无法逃脱的病人。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👻</div>
+                    <h3>古宅阴魂</h3>
+                    <p>依托庄园中式建筑风格打造，传说中一位晚清贵妇在此自缢，每逢阴天便在回廊中徘徊，寻找替身。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕷️</div>
+                    <h3>生化危机</h3>
+                    <p>封闭的地下实验室发生了泄露，变异的实验体在黑暗中蠢蠢欲动，这里没有规则，只有生存。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>鬼屋是否包含人身伤害风险？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>杨柳青庄园鬼屋在设计上严格遵守安全规范，所有NPC均经过专业培训，且随身携带通讯设备。虽然会有肢体接触（如追逐、触碰），但绝不会造成身体伤害。若您有心脏病、高血压或幽闭恐惧症，建议提前告知工作人员或放弃体验。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>可以拍照录像吗？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>为了保持恐怖氛围的沉浸感，园区大部分区域（包括废弃医院和古宅阴魂）是<strong>禁止拍照和录像</strong>的。部分公共区域和出口处允许拍摄。请务必遵守园区规定，不要使用闪光灯，以免吓到演员或影响其他游客体验。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>未成年人可以单独进入吗？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>出于安全考虑，未成年人（未满18岁）必须由成人陪同方可进入。建议陪同的成人保持距离，避免过度干涉体验过程。园区设有专门的儿童/温和区域，适合带小朋友的游客。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>如果中途害怕想退出怎么办？</span>
+                            <span class="icon-plus">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>在体验过程中，您可以通过特定的“求救信号”（如举手或按响手环）联系工作人员。工作人员会立即介入并将您安全带出当前区域。虽然中途退出不退全款，但我们理解恐惧是主观感受，安全永远是第一位的。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">隐私政策</a>
+            <a href="#">服务条款</a>
+            <a href="#">加入我们</a>
+        </div>
+        <p class="copyright">&copy; 2023 杨柳青庄园鬼屋体验馆 版权所有</p>
+        <p style="font-size: 0.8rem; color: #444; margin-top: 0.5rem;">本网站为信息展示平台，门票价格及活动详情请以官方公布为准。</p>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
