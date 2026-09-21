@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3d网游门户提供最新3D网络游戏资讯、热门MMORPG推荐、职业攻略、副本技巧及游戏下载服务，助您畅游虚拟世界。">
+    <meta name="keywords" content="3d网游,3D网络游戏,MMORPG,网游攻略,游戏下载,虚拟世界">
+    <title>3d网游-探索无限虚拟世界的沉浸式体验与攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #00cec9;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2d2d44;
+            --text-main: #ffffff;
+            --text-muted: #b2bec3;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+        }
+
+        .more-link {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-muted);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 4rem 0;
+            background: radial-gradient(circle at 70% 30%, #3d3d5c 0%, var(--dark-bg) 70%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #2d2d44 0%, #1e1e2e 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            opacity: 0.9;
+        }
+
+        /* Game Grid */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .game-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            color: var(--text-muted);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .download-btn {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Features / Guide Section */
+        .features-section {
+            background-color: #252538;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* News List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .news-item:hover {
+            background-color: #323248;
+        }
+
+        .news-date {
+            background-color: rgba(108, 92, 231, 0.2);
+            color: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .news-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .news-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161625;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                height: 250px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">3D 游界</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">新游推荐</a></li>
+                    <li><a href="#">经典网游</a></li>
+                    <li><a href="#">游戏攻略</a></li>
+                    <li><a href="#">硬件评测</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册账号</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>探索无限虚拟世界的<br>沉浸式体验与攻略指南</h1>
+                <p>汇聚全球最热门的3D网游资讯，为您提供从职业选择到副本通关的全方位支持。加入我们，开启您的史诗级冒险旅程。</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: start;">
+                    <button class="btn btn-primary">浏览热门游戏</button>
+                    <button class="btn btn-outline">查看最新资讯</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <span>收录游戏</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10W+</h3>
+                        <span>玩家社区</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <span>深度评测</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Using a placeholder that looks like a game screenshot -->
+                <img src="https://picsum.photos/seed/gaming3d/800/600.jpg" alt="3D游戏画面展示">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Featured Games -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">本周热门 3D 网游</h2>
+                <a href="#" class="more-link">查看全部 &rarr;</a>
+            </div>
+            <div class="game-grid">
+                <!-- Game Card 1 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="card-badge">新游</span>
+                        <img src="https://picsum.photos/seed/mmo1/400/300.jpg" alt="游戏截图">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="game-title">星际远征：幻境</h3>
+                        <div class="game-tags">
+                            <span class="tag">科幻</span>
+                            <span class="tag">MMORPG</span>
+                            <span class="tag">开放世界</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="rating">9.2 分</span>
+                            <a href="#" class="download-btn">下载游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 2 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <span class="card-badge">热门</span>
+                        <img src="https://picsum.photos/seed/mmo2/400/300.jpg" alt="游戏截图">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="game-title">龙域传说：觉醒</h3>
+                        <div class="game-tags">
+                            <span class="tag">玄幻</span>
+                            <span class="tag">动作</span>
+                            <span class="tag">PVP</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="rating">9.0 分</span>
+                            <a href="#" class="download-btn">下载游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 3 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/mmo3/400/300.jpg" alt="游戏截图">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="game-title">暗影刺客：幻界</h3>
+                        <div class="game-tags">
+                            <span class="tag">RPG</span>
+                            <span class="tag">动作</span>
+                            <span class="tag">暗黑风格</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="rating">8.8 分</span>
+                            <a href="#" class="download-btn">下载游戏</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 4 -->
+                <article class="game-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/mmo4/400/300.jpg" alt="游戏截图">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="game-title">末日幸存者：3D</h3>
+                        <div class="game-tags">
+                            <span class="tag">生存</span>
+                            <span class="tag">射击</span>
+                            <span class="tag">合作</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="rating">8.5 分</span>
+                            <a href="#" class="download-btn">下载游戏</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features-section">
+            <div class="section-header">
+                <h2 class="section-title">为什么选择 3D 网游体验？</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎮</div>
+                    <h3>极致视觉冲击</h3>
+                    <p>利用先进的3D渲染技术，呈现电影级的画质与流畅的动画效果，带来身临其境的感官享受。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>广阔探索空间</h3>
+                    <p>打破平面的限制，提供立体的世界观和自由度极高的地图探索，发现隐藏的宝藏与秘密。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>立体战斗策略</h3>
+                    <p>结合3D空间感的战斗系统，考验玩家的走位、预判与技能搭配，让每一场战斗都充满变数。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">最新游戏资讯</h2>
+                <a href="#" class="more-link">查看更多 &rarr;</a>
+            </div>
+            <div class="news-list">
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-content">
+                        <h4><a href="#">《星际远征》全新版本“深空航线”即将上线，开放新地图与飞行坐骑</a></h4>
+                        <p>开发者透露，本次更新将引入基于物理引擎的飞船战斗系统，并开放银河系边缘的神秘星域。</p>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">12</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-content">
+                        <h4><a href="#">2024年度最佳3D网游评选结果公布，多款国产独立MMO入围</a></h4>
+                        <p>本次评选从画面表现、玩法创新、社区活跃度等多个维度进行综合考量，旨在推动行业发展。</p>
+                    </div>
+                </article>
+
+                <article class="news-item">
+                    <div class="news-date">
+                        <span class="day">08</span>
+                        <span class="month">10月</span>
+                    </div>
+                    <div class="news-content">
+                        <h4><a href="#">新手入门指南：3D网游中的视角控制与操作技巧详解</a></h4>
+                        <p>对于刚接触3D大作的玩家，掌握第三人称视角的切换与锁定是提升操作上限的关键。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hardware Recommendations -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">畅玩 3D 网游的硬件配置建议</h2>
+            </div>
+            <div class="game-grid">
+                <div class="game-card" style="padding: 1.5rem; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">入门级 (1080P)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                        适合配置较低的电脑，可流畅运行大部分主流3D网游。
+                    </p>
+                    <ul style="text-align: left; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1rem;">
+                        <li>显卡: GTX 1650 / RX 6500 XT</li>
+                        <li>内存: 8GB DDR4</li>
+                        <li>处理器: i3-12100F</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">查看详情</button>
+                </div>
+                <div class="game-card" style="padding: 1.5rem; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">中高端 (2K/4K)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                        适合追求极致画质体验的玩家，开启高画质特效。
+                    </p>
+                    <ul style="text-align: left; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1rem;">
+                        <li>显卡: RTX 3060 / RX 6700 XT</li>
+                        <li>内存: 16GB DDR4/DDR5</li>
+                        <li>处理器: i5-12400F / R5 5600</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%;">查看详情</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">3D 游界</a>
+                    <p>专注于为玩家提供最全面、最及时的3D网络游戏资讯、下载与攻略服务。我们致力于构建一个开放、友好的游戏交流平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">角色扮演 (RPG)</a></li>
+                        <li><a href="#">动作射击</a></li>
+                        <li><a href="#">策略模拟</a></li>
+                        <li><a href="#">大型多人在线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 3D 游界 版权所有. 本站所有游戏资源仅供学习交流使用，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
