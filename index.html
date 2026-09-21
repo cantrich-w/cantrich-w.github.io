@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>被夺走的刻印-奇幻史诗游戏背景与世界观设定</title>
+    <meta name="description" content="深入解析《被夺走的刻印》游戏世界观、核心设定、角色背景及剧情脉络。探索失落的魔法、刻印的诅咒以及玩家在其中的使命。">
+    <meta name="keywords" content="被夺走的刻印,奇幻RPG,游戏设定,世界观,刻印系统">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --bg-card: #181b21;
+            --bg-card-hover: #22262e;
+            --accent-gold: #d4af37;
+            --accent-glow: rgba(212, 175, 55, 0.3);
+            --text-main: #e0e0e0;
+            --text-muted: #9ca3af;
+            --border-color: #2d333b;
+            --font-main: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 17, 21, 0.7), rgba(15, 17, 21, 0.9)), 
+                        url('https://picsum.photos/seed/darkfantasy/1920/1080') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #000;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--text-main);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-main);
+            color: #000;
+        }
+
+        /* World Lore Section */
+        .lore-section {
+            padding: 80px 0;
+        }
+
+        .lore-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .lore-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .lore-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .lore-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .lore-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .lore-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .lore-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-gold);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .lore-image:hover::before {
+            opacity: 1;
+        }
+
+        /* The Marks Section */
+        .marks-section {
+            background-color: var(--bg-card);
+            padding: 80px 0;
+        }
+
+        .marks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mark-card {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mark-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .mark-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .mark-card:hover::before {
+            opacity: 1;
+        }
+
+        .mark-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .mark-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .mark-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Character Class Section */
+        .class-section {
+            padding: 80px 0;
+        }
+
+        .class-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-gold);
+            color: #000;
+            border-color: var(--accent-gold);
+        }
+
+        .class-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .class-content.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .class-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .class-info p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .class-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .class-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .class-features li::before {
+            content: '•';
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            line-height: 0;
+        }
+
+        .class-visual {
+            position: relative;
+        }
+
+        .class-visual img {
+            width: 100%;
+            border-radius: 8px;
+            filter: grayscale(40%);
+            transition: filter 0.3s;
+        }
+
+        .class-visual:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-card);
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-muted);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0c0f;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--text-main);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1f232b;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .lore-grid, .class-content.active { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .hero { height: 70vh; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>刻印传说</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#world">世界观</a></li>
+                    <li><a href="#marks">刻印系统</a></li>
+                    <li><a href="#classes">职业</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>当荣耀被剥夺，<br>唯有意志永恒</h1>
+                <p>在《被夺走的刻印》中，探索一个刻印力量被窃取、秩序崩塌的暗黑奇幻世界。你是救赎者，还是复仇者？</p>
+                <div class="hero-btns">
+                    <a href="#world" class="btn btn-primary">开始探索</a>
+                    <a href="#marks" class="btn btn-outline">了解设定</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- World Lore Section -->
+        <section id="world" class="lore-section">
+            <div class="container">
+                <div class="section-title">世界背景</div>
+                <div class="section-subtitle">一个关于遗忘、诅咒与重生的史诗故事</div>
+                
+                <div class="lore-grid">
+                    <div class="lore-text">
+                        <h2>永恒王国的黄昏</h2>
+                        <p>数百年前，王都“阿瓦隆”被一股名为“虚空”的黑暗势力侵袭。传说中，能够赋予人类神力的“七大刻印”在那一夜被连根拔起，流落至大陆的各个角落。失去了刻印庇护，王国陷入混乱，瘟疫、战争与异族入侵接踵而至。</p>
+                        <p>如今，你作为一位觉醒了古老记忆的流浪者，必须踏上旅程。你的目标不仅是找回失落的刻印，更是要揭开那个导致王国覆灭的真相。在这个世界里，刻印不仅是力量的源泉，更是灵魂的枷锁。</p>
+                        <p>每一块刻印都对应着一种元素或神祇，它们被剥夺后化作了扭曲的诅咒，潜伏在阴影之中，等待着吞噬任何试图触碰它们的人。</p>
+                    </div>
+                    <div class="lore-image">
+                        <img src="https://picsum.photos/seed/darkforest/600/400" alt="被夺走的刻印 - 黑暗森林">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marks System Section -->
+        <section id="marks" class="marks-section">
+            <div class="container">
+                <div class="section-title">失落的刻印</div>
+                <div class="section-subtitle">七大神祇的权能，现已沦为诅咒</div>
+                
+                <div class="marks-grid">
+                    <article class="mark-card">
+                        <div class="mark-icon">🔥</div>
+                        <h3>烈阳刻印</h3>
+                        <p>原为赋予生命的温暖之源。被夺走后，它化作了燃烧殆尽的“红莲之火”，能瞬间摧毁一切有机物质，却无法给予新生。</p>
+                    </article>
+
+                    <article class="mark-card">
+                        <div class="mark-icon">❄️</div>
+                        <h3>霜寒刻印</h3>
+                        <p>掌管时间与记忆的神器。现已被封印在极寒之地，任何触碰者都会失去记忆，身体逐渐僵硬如冰雕，永远沉睡。</p>
+                    </article>
+
+                    <article class="mark-card">
+                        <div class="mark-icon">⚡</div>
+                        <h3>雷霆刻印</h3>
+                        <p>代表着审判与威严。现已成为狂暴的雷暴核心，在雷雨夜会召唤无数闪电，无差别地轰击大地，寻找着新的宿主。</p>
+                    </article>
+
+                    <article class="mark-card">
+                        <div class="mark-icon">🌿</div>
+                        <h3>生机刻印</h3>
+                        <p>曾治愈万物的绿色光芒。如今变成了剧毒的孢子，散布在沼泽与森林中，将生者转化为腐朽的植物傀儡。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Classes Section -->
+        <section id="classes" class="class-section">
+            <div class="container">
+                <div class="section-title">职业体系</div>
+                <div class="section-subtitle">选择你的命运，决定你如何夺回刻印</div>
+
+                <div class="class-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'warrior')">破军者</button>
+                    <button class="tab-btn" onclick="openTab(event, 'mage')">咒术师</button>
+                    <button class="tab-btn" onclick="openTab(event, 'rogue')">影行者</button>
+                </div>
+
+                <div id="warrior" class="class-content active">
+                    <div class="class-info">
+                        <h3>破军者</h3>
+                        <p>身经百战的战士，通过肉体强化来对抗被夺走的刻印所化身的怪物。他们擅长使用重型盾牌与双手巨剑，是队伍中坚不可摧的防线。</p>
+                        <ul class="class-features">
+                            <li><strong>核心能力：</strong> 铁壁姿态 - 免疫所有元素伤害。</li>
+                            <li><strong>特长：</strong> 破碎打击 - 对刻印类敌人造成双倍伤害。</li>
+                            <li><strong>弱点：</strong> 移动速度较慢，缺乏远程手段。</li>
+                        </ul>
+                    </div>
+                    <div class="class-visual">
+                        <img src="https://picsum.photos/seed/swordsman/600/400" alt="破军者职业形象">
+                    </div>
+                </div>
+
+                <div id="mage" class="class-content">
+                    <div class="class-info">
+                        <h3>咒术师</h3>
+                        <p>能够理解刻印残响的知识分子，通过吟唱古老的语言来操纵魔力。他们并非单纯使用魔法，而是试图“净化”被污染的刻印力量。</p>
+                        <ul class="class-features">
+                            <li><strong>核心能力：</strong> 魔力共鸣 - 自动吸收周围的刻印能量。</li>
+                            <li><strong>特长：</strong> 精准打击 - 对单个目标造成毁灭性打击。</li>
+                            <li><strong>弱点：</strong> 身体脆弱，生命值较低。</li>
+                        </ul>
+                    </div>
+                    <div class="class-visual">
+                        <img src="https://picsum.photos/seed/wizard/600/400" alt="咒术师职业形象">
+                    </div>
+                </div>
+
+                <div id="rogue" class="class-content">
+                    <div class="class-info">
+                        <h3>影行者</h3>
+                        <p>潜伏在阴影中的刺客，擅长利用地形与速度。他们相信只有彻底斩断刻印的根源，才能阻止其扩散，因此他们追求极致的杀戮效率。</p>
+                        <ul class="class-features">
+                            <li><strong>核心能力：</strong> 影遁 - 在阴影中瞬间移动。</li>
+                            <li><strong>特长：</strong> 割喉 - 必中技能，无视护甲。</li>
+                            <li><strong>弱点：</strong> 对群体敌人缺乏控制能力。</li>
+                        </ul>
+                    </div>
+                    <div class="class-visual">
+                        <img src="https://picsum.photos/seed/assassin/600/400" alt="影行者职业形象">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title">常见问题</div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">被夺走的刻印会恢复原状吗？</div>
+                        <div class="faq-answer">
+                            <p>在游戏的剧情设定中，刻印本身已经破碎并发生了变异。玩家需要收集碎片并完成净化仪式，将其转化为一种新的、可控的力量形态，而非恢复到最初的神器状态。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">新手应该如何选择职业？</div>
+                        <div class="faq-answer">
+                            <p>如果你喜欢近身肉搏、承受伤害并保护队友，推荐选择“破军者”；如果你喜欢在远处施法、观察局势并造成高额伤害，推荐“咒术师”；如果你喜欢潜行、爆发和刺客玩法，推荐“影行者”。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏支持多人联机吗？</div>
+                        <div class="faq-answer">
+                            <p>是的，《被夺走的刻印》支持4人组队模式。在探索被污染的刻印遗迹时，与队友配合可以触发特殊的“共鸣技能”，从而击败强大的BOSS。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <span style="font-size: 1.2rem;">刻印传说</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        致力于为玩家构建最真实的暗黑奇幻体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">世界地图</a></li>
+                        <li><a href="#">怪物图鉴</a></li>
+                        <li><a href="#">装备列表</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">Discord频道</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 被夺走的刻印设定站. All rights reserved. 此页面为概念设计展示，非官方游戏网站。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Logic
+        function openTab(evt, tabName) {
+            var i, classContent, tabBtn;
+            
+            // Hide all content
+            classContent = document.getElementsByClassName("class-content");
+            for (i = 0; i < classContent.length; i++) {
+                classContent[i].classList.remove("active");
+            }
+            
+            // Remove active class from buttons
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+            
+            // Show current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+              </html>
